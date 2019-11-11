@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+
+        <!--
+            1)	Скачайте и подключите к данному документу библиотеку jQuery;
+            2)	Задание 1. Средствами jQuery выберете параграф с классом "red" и неупорядоченный список.
+                По нажатию по кнопке "Задание 1" измените цвет шрифта этих элементов на красный.
+            3)	Задание 2. Выберете параграф в элементе "div". По нажатию по кнопке "Задание 2" измените цвет шрифта параграфа на синий
+            4)	Задание 3. Выберите фрагмент текста в параграфе, который выделен тегом "strong". Этот параграф должен
+                содержать изображение!!! По нажатию по кнопке "Задание 3" измените начертание выделенного фрагмента текста на курсив.
+            5) Задание 4. Выберите все дочерние элементы "div" в контейнере с классом "blocks". По нажатию по кнопке "Задание 4",
+                измените фоновый цвет этих элементов.
+        -->
+
+        <title>Домашняя работа</title>
+        <link href="style.css" rel="stylesheet" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script>
+
+            // Тут будет Ваш код
+            
+            $(function(){
+                // Task 1
+               $('input[value = "Задание 1"]').on('click', function(){
+                    $('p.red, ul li').css('color', 'red');
+                });
+                // Task 2
+                $('input[value = "Задание 2"]').on('click', function(){
+                    $('div p').css('color', 'blue');
+                });
+                // Task 3
+                $('input[value = "Задание 3"]').on('click', function(){
+                     $('p:has(img) strong').css('font-style', 'italic');
+                });
+                // Task 4
+                $('input[value = "Задание 4"]').on('click', function(){
+                    $('div.blocks > div').css('background', 'blue');
+                });
+            });
+            
+
+                
+
+        </script>
+    </head>
+    <body>
+        <header id="main">
+            <h1>Site title</h1>
+        </header>
+        <section>
+            <nav>
+                <h2>Page settings</h2>
+                <input id="#" type="button" value="Задание 1" /><br />
+                <input id="#" type="button" value="Задание 2" /><br />
+                <input id="#" type="button" value="Задание 3" /><br />
+                <input id="#" type="button" value="Задание 4" /><br />
+            </nav>
+            <article> 
+                <header>
+                    <h2>Post name</h2>
+                </header>
+                <p>
+                    <img src="http://placekitten.com/g/260/125" alt="cat" title="cat" class="cat_1"/>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam <span class="underline">nonummy</span> nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, <strong>quis</strong> nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes.</p>
+                <p class="red">Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit.</p>
+                <div>
+                    <p>Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum.</p>
+                </div>
+                <p>Claritas est etiam processus dynamicus, qui sequitur mutationem <span class="underline">consuetudium</span> lectorum. Mirum est notare <strong>quam</strong> littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima.</p>
+                <ul>
+                    <li>Item 1</li>
+                    <li>Item 2</li>
+                    <li>Item 3</li>
+                </ul>
+                <div class="blocks">
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </article>
+        </section>
+        <footer>
+            <h3>Footer</h3>
+        </footer>
+    </body>
+</html>
