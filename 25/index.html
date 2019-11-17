@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    
+    <!--
+        Задание.
+        Используя jQuery реализуйте генерацию списка библиографии после статьи. Результат должен быть как на снимке "результат".
+        Снимок рядом с этим файлом
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let links = $('a');   
+
+            $('.content')
+            .append('<p>Веб-сайты, упомянутые в данном документе:</p>')
+            .append('<ul></ul>');
+
+            for(let i=0; i<links.length; i++){
+                $('ul').append('<li><strong>'+$(links[i]).text()+':</strong> <a href="'+$(links[i]).attr('href') +'">'+$(links[i]).attr('href') +'</a></li>')
+            }
+        })
+    </script>
+</head>
+
+<body>
+<div class="wrapper">
+    <div class="content">
+        <div class="main">
+            <h1>Динамически созданная библиография</h1>
+            <p>Существует много фантастических веб-сайтов. <a href="http://www.yahoo.com/">Yahoo!</a> приходит на ум,
+                как и <a href="http://www.google.com/">Google</a>. Мало, кто забудет влияние, оказанное на культуру
+                сайтом <a href="http://www.hampsterdance.com/">Hampster Dance</a>.</p>
+        </div>
+    </div>
+</div>
+</body>
+</html>
