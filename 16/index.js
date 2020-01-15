@@ -1,2 +1,2 @@
-let addRequire =require('./addRequire');
+const addRequire = require('./addRequire');
 addRequire.moveAllRequire();
